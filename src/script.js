@@ -18,6 +18,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+const brickTexture = textureLoader.load('/textures/bricks/color.jpg');
 
 //Disco Ball
 const geometry = new THREE.OctahedronGeometry( 4, 3 ); 
@@ -51,7 +52,7 @@ scene.add(sphere)
 // Floor
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(50, 50),
-    new THREE.MeshStandardMaterial({ color: '#a9c388' })
+    new THREE.MeshStandardMaterial({ map: brickTexture ,color: '#a9c388' })
 )
 floor.rotation.x = - Math.PI * 0.5
 floor.position.y = 0
